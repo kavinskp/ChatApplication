@@ -25,9 +25,9 @@ class ChatClient implements Runnable
         inputLine = new BufferedReader(new InputStreamReader(System.in));
         os = new PrintStream(clientSocket.getOutputStream());
         is = new DataInputStream(clientSocket.getInputStream()); 
-        //System.out.println("clientSocket="+clientSocket+"os="+os+"is="+is);
+       
         if (clientSocket != null && os != null && is != null) {
-            //System.out.println("ChatClient.main()");
+           
         new Thread((Runnable) new ChatClient()).start();
         while(!closed){
               os.println(inputLine.readLine().trim());
